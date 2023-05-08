@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  height: 120px;
+  margin-right: 130px;
+}
+.header_item {
+  width: 238px;
+  gap: 17px;
+  text-transform: uppercase;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+.header_item:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 238px;
+  height: 65px;
+  padding: 0;
+  background-color: white;
+  font-family: "Hind Madurai", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}

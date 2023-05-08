@@ -1,0 +1,33 @@
+.homepage_title {
+  position: absolute;
+  height: 228px;
+  width: 176px;
+  left: 40px;
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+  font-size: 84px;
+  line-height: 77px;
+  font-style: normal;
+}
+.homepage_span {
+  display: inline-block;
+}
+.homepage_span::first-letter {
+  font-weight: 800;
+}
+.homepage_text {
+  position: absolute;
+  height: 415px;
+  width: 497px;
+  right: 80px;
+  margin-top: 150px;
+}
+.homepage_text p {
+  font-family: "Hind Madurai";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 55px;
+  line-height: 76px;
+  text-transform: uppercase;
+  text-align: justify;
+}
