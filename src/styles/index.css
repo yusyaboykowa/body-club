@@ -2,28 +2,22 @@
 @import "./header.css";
 @import "./homepage.css";
 /*add your imports*/
-body {
-  background: url("../public/landing.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-}
-
-.btn {
+.button-primary {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-top: 92px;
-  width: 460px;
-  height: 92px;
   background-color: white;
   font-family: "Hind Madurai", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 40px;
   text-transform: uppercase;
   border: 1px solid #000000;
   border-radius: 10px;
+}
+.book-button {
+  margin-top: 52px;
+  width: 360px;
+  height: 62px;
+  font-size: 30px;
 }
