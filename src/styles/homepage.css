@@ -1,0 +1,41 @@
+.home-page {
+  background: url("../public/landing.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.home-page__title {
+  position: absolute;
+  height: 120px;
+  width: 100px;
+  top: 70px;
+  left: 20px;
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+  font-size: 54px;
+  line-height: 47px;
+  font-style: normal;
+}
+.title__item {
+  display: inline-block;
+}
+.title__item::first-letter {
+  font-weight: 800;
+}
+.home-page__text {
+  position: absolute;
+  height: 215px;
+  width: 397px;
+  right: 40px;
+  margin-top: 150px;
+}
+.home-page__text p {
+  font-family: "Hind Madurai";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 35px;
+  text-transform: uppercase;
+  text-align: justify;
+}
