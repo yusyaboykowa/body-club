@@ -1,6 +1,7 @@
 @import "./reset.css";
 @import "./header.css";
 @import "./homepage.css";
+@import "./description.css";
 /*add your imports*/
 .button-primary {
   display: flex;
