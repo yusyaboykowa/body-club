@@ -2,6 +2,7 @@
 @import "./header.css";
 @import "./homepage.css";
 @import "./description.css";
+@import "./courses.css";
 /*add your imports*/
 .button-primary {
   display: flex;
