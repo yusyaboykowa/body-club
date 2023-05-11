@@ -3,33 +3,23 @@
   border: 1px solid black;
 }
 .plans__title {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   padding-top: 50px;
   margin: 0 auto;
-  font-family: "Hind Madurai";
-  font-style: normal;
   font-weight: 500;
   font-size: 50px;
   line-height: 60px;
-  text-align: justify;
+  text-align: center;
   text-transform: capitalize;
   text-decoration-line: underline;
 }
 .plans__text {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   padding: 28px 0;
   margin: 0 auto;
   width: 950px;
-  font-family: "Hind Madurai";
-  font-style: normal;
   font-weight: 500;
   font-size: 25px;
   line-height: 30px;
-  text-align: justify;
+  text-align: center;
 }
 .plans__container {
   display: grid;
@@ -74,8 +64,6 @@
   display: flex;
   justify-content: center;
   margin: 25px auto;
-  font-family: "Hind Madurai";
-  font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 20px;
