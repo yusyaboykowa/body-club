@@ -1,6 +1,9 @@
 @import "./reset.css";
 @import "./header.css";
 @import "./homepage.css";
+@import "./description.css";
+@import "./courses.css";
+@import "./plans.css";
 /*add your imports*/
 .button-primary {
   display: flex;
