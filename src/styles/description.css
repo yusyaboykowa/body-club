@@ -6,16 +6,13 @@
   border: 1px solid black;
 }
 .description__title {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   padding-top: 50px;
   margin: 0 auto;
   width: 315px;
   height: 100px;
   font-family: "Inter", sans-serif;
   font-size: 44px;
-  text-align: justify;
+  text-align: center;
   border-bottom: 3px solid;
   text-transform: capitalize;
 }
@@ -29,8 +26,6 @@
 
 .description__text {
   width: 800px;
-  font-family: "Hind Madurai";
-  font-style: normal;
   font-weight: 300;
   font-size: 20px;
   line-height: 30px;

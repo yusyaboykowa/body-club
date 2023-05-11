@@ -17,8 +17,6 @@
   padding: 50px;
 }
 .courses__title {
-  font-family: "Hind Madurai";
-  font-weight: 500;
   font-size: 35px;
   line-height: 45px;
   text-align: justify;
@@ -26,9 +24,6 @@
   text-transform: uppercase;
 }
 .courses__text {
-  font-family: "Hind Madurai";
-  font-style: normal;
-  font-weight: 400;
   font-size: 30px;
   line-height: 45px;
   text-align: justify;

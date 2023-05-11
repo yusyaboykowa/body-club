@@ -5,14 +5,20 @@
 @import "./courses.css";
 @import "./plans.css";
 /*add your imports*/
+html,
+body {
+  font-family: "Hind Madurai", sans-serif;
+}
+* {
+  font-style: normal;
+  font-weight: 500;
+}
 .button-primary {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   background-color: white;
-  font-family: "Hind Madurai", sans-serif;
-  font-style: normal;
   font-weight: 400;
   text-transform: uppercase;
   border: 1px solid #000000;
