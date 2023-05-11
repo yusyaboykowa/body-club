@@ -9,7 +9,7 @@ html,
 body {
   font-family: "Hind Madurai", sans-serif;
 }
-p {
+* {
   font-style: normal;
   font-weight: 500;
 }
@@ -19,7 +19,6 @@ p {
   align-items: center;
   justify-content: center;
   background-color: white;
-  font-style: normal;
   font-weight: 400;
   text-transform: uppercase;
   border: 1px solid #000000;

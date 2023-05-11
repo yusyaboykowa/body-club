@@ -5,7 +5,6 @@
 .plans__title {
   padding-top: 50px;
   margin: 0 auto;
-  font-weight: 500;
   font-size: 50px;
   line-height: 60px;
   text-align: center;
@@ -16,7 +15,6 @@
   padding: 28px 0;
   margin: 0 auto;
   width: 950px;
-  font-weight: 500;
   font-size: 25px;
   line-height: 30px;
   text-align: center;
@@ -36,38 +34,27 @@
   border-radius: 20px;
 }
 .plans__name {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   margin-top: 55px;
   font-family: "Jost";
-  font-style: normal;
-  font-weight: 500;
   font-size: 20px;
   line-height: 30px;
-  text-align: justify;
+  text-align: center;
   text-transform: capitalize;
 }
 .plans__price {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   margin: 20px auto;
   font-family: "Jost";
-  font-style: normal;
   font-weight: 400;
   font-size: 25px;
   line-height: 30px;
-  text-align: justify;
+  text-align: center;
 }
 .plans__duration {
-  display: flex;
-  justify-content: center;
   margin: 25px auto;
   font-weight: 400;
   font-size: 15px;
   line-height: 20px;
-  text-align: justify;
+  text-align: center;
 }
 .plans__btn {
   display: flex;
