@@ -15,7 +15,6 @@
   text-transform: capitalize;
   font-size: 54px;
   line-height: 47px;
-  font-style: normal;
 }
 .title__item {
   display: inline-block;
@@ -31,7 +30,6 @@
   margin-top: 150px;
 }
 .home-page__text p {
-  font-family: "Hind Madurai";
   font-style: normal;
   font-weight: 400;
   font-size: 45px;
