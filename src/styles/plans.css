@@ -1,6 +1,7 @@
 .plans {
   background: #f4eeee;
   border: 1px solid black;
+  margin-top: 50px;
 }
 .plans__title {
   padding-top: 50px;

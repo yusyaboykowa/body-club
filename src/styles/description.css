@@ -3,6 +3,7 @@
   background: url("../public/vector1.png");
   background-repeat: no-repeat;
   background-size: 30%;
+  background-color: white;
   border: 1px solid black;
 }
 .description__title {
