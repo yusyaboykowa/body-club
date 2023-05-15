@@ -1,0 +1,73 @@
+.experts {
+  border-bottom: 1px solid black;
+}
+.experts__title {
+  padding-top: 40px;
+  margin: 0 auto;
+  font-weight: 600;
+  font-size: 34px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration-line: underline;
+}
+.experts__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-top: 10px;
+  justify-items: center;
+  margin-bottom: 50px;
+  height: 500px;
+}
+
+.experts__card {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 400px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+}
+.experts__card:nth-of-type(even) {
+  flex-direction: column-reverse;
+  border-bottom: none;
+  align-self: flex-end;
+}
+.experts__card:nth-of-type(odd) {
+  border-top: none;
+}
+.experts__image {
+  position: absolute;
+  height: 50%;
+  width: 101%;
+  left: -1px;
+  max-inline-size: none;
+}
+.experts__card-container {
+  position: relative;
+}
+.experts__card-container:nth-of-type(odd) {
+  position: relative;
+  padding-top: 220px;
+  z-index: 1000;
+}
+.experts__card-container:nth-child(2) {
+  position: relative;
+  padding-bottom: 220px;
+  z-index: 1000;
+}
+.experts__name {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.experts__info {
+  font-family: "Inter";
+  font-size: 20px;
+  line-height: 24px;
+  text-align: justify;
+  padding: 15px 20px;
+}
