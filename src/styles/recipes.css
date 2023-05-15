@@ -2,6 +2,7 @@
   background: #f4eeee;
   padding-top: 50px;
   padding-bottom: 50px;
+  border-bottom: 1px solid black;
 }
 .recipes__container {
   background-color: white;

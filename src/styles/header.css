@@ -1,7 +1,8 @@
 .header {
   background: transparent;
   position: absolute;
-  right: 50px;
+  width: 100%;
+  padding-right: 50px;
 }
 .header__nav {
   display: flex;
