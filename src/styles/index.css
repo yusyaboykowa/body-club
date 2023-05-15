@@ -1,33 +1,9 @@
 @import "./reset.css";
+@import "./global.css";
 @import "./header.css";
-@import "./homepage.css";
+@import "./home-page.css";
 @import "./description.css";
 @import "./courses.css";
 @import "./plans.css";
-/*add your imports*/
-html,
-body {
-  font-family: "Hind Madurai", sans-serif;
-  background-color: #f4eeee;
-}
-* {
-  font-style: normal;
-  font-weight: 500;
-}
-.button-primary {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  font-weight: 400;
-  text-transform: uppercase;
-  border: 1px solid #000000;
-  border-radius: 10px;
-}
-.book-button {
-  margin-top: 52px;
-  width: 360px;
-  height: 62px;
-  font-size: 30px;
-}
+@import "./recipes.css";
+@import "./experts.css";

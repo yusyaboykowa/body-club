@@ -16,9 +16,7 @@
   font-size: 54px;
   line-height: 47px;
 }
-.title__item {
-  display: inline-block;
-}
+
 .title__item::first-letter {
   font-weight: 800;
 }
@@ -33,7 +31,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 45px;
-  line-height: 35px;
+  line-height: 45px;
   text-transform: uppercase;
   text-align: justify;
 }

@@ -1,0 +1,25 @@
+* {
+  font-family: "Hind Madurai", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+body {
+  background-color: #f4eeee;
+}
+b {
+  font-weight: 800;
+}
+.button-primary {
+  display: inline-block;
+  background-color: white;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 4px 24px;
+  text-align: center;
+}
+.book-button {
+  margin-top: 52px;
+  font-size: 30px;
+}
