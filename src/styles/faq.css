@@ -1,22 +1,14 @@
 .faq__title {
   padding-top: 50px;
-  margin: 0 auto;
   font-size: 50px;
-  line-height: 60px;
   text-align: center;
   text-transform: uppercase;
   text-decoration-line: underline;
 }
 .faq__container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
   margin: 80px;
 }
 .faq__item {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   background: #ffffff;
   border: 1px solid #000000;
   box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
@@ -26,11 +18,29 @@
   padding-left: 40px;
   padding-right: 40px;
 }
-.faq__text {
+.faq__accordion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.4s;
   font-family: "Inter";
   font-weight: 400;
   font-size: 22px;
 }
-.faq__image {
-  height: 25px;
+.panel {
+  padding: 10px 18px;
+  background-color: #f4eeee;
+  display: none;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.faq__accordion:after {
+  content: url(../public/plus.png);
+}
+
+.active:after {
+  content: url(../public/minus-sign.png);
+  /* Unicode character for "minus" sign (-) */
 }

@@ -341,18 +341,34 @@
         <div class="tools__tracker-first">
           <div class="tools__card calories">
             <h3 class="tools__name">TRACK YOUR COLORIES EXPENSES</h3>
-            <img class="tools__image" src="../src/public/tool_1.png" />
-            <img class="tools__image" src="../src/public/tool_2.png" />
+            <img
+              class="tools__image"
+              src="../src/public/tool_1.png"
+              alt="calories"
+            />
+            <img
+              class="tools__image"
+              src="../src/public/tool_2.png"
+              alt="calories"
+            />
           </div>
 
           <div class="tools__card sleep-water">
             <div class="tools__item">
               <h3 class="tools__item-name">SLEEP TRACKER</h3>
-              <img class="tools__item-image" src="../src/public/tool_3.png" />
+              <img
+                class="tools__item-image"
+                src="../src/public/tool_3.png"
+                alt="sleep"
+              />
             </div>
             <div class="tools__item">
               <h3 class="tools__item-name">WATER TRACKER</h3>
-              <img class="tools__item-image" src="../src/public/tool_4.png" />
+              <img
+                class="tools__item-image"
+                src="../src/public/tool_4.png"
+                alt="water"
+              />
             </div>
           </div>
         </div>
@@ -365,6 +381,7 @@
               <img
                 class="tools__image-workout"
                 src="../src/public/tool_5.png"
+                alt="workout__image"
               />
             </div>
             <div class="tools__card music">
@@ -373,22 +390,23 @@
               </h3>
               <div class="music__container">
                 <div class="music__listen">
-                  <img class="music__image" src="../src/public/music.png" />
+                  <img
+                    class="music__image"
+                    src="../src/public/music.png"
+                    alt="music_cover"
+                  />
                   <div class="music__info">
                     <span class="music__name">Flowers</span>
                     <span class="music__author">Miley Cyrus</span>
                   </div>
                 </div>
                 <p class="line"></p>
-                <div class="music__time">
-                  <span>0:00</span>
-                  <span>3:20</span>
-                </div>
-                <div class="music__control">
-                  <img src="../src/public/play_back.png" />
-                  <img src="../src/public/pause.png" />
-                  <img src="../src/public/play_back2.png" />
-                </div>
+                <audio controls class="music__miley">
+                  <source
+                    src="../src/public/Miley Cyrus - Flowers.mp3"
+                    type="audio/mp3"
+                  />
+                </audio>
               </div>
             </div>
           </div>
@@ -402,7 +420,11 @@
       </p>
       <div class="reviews__container">
         <div class="reviews__card">
-          <img src="../src/public/reviewer1.png" class="reviewer__image" />
+          <img
+            src="../src/public/reviewer1.png"
+            class="reviewer__image"
+            alt="reviewer_Carl"
+          />
           <div class="reviewer__info">
             <h3 class="reviewer__name">CARL JOHN</h3>
             <p class="reviewer__text">
@@ -412,7 +434,11 @@
           </div>
         </div>
         <div class="reviews__card">
-          <img src="../src/public/reviewer2.png" class="reviewer__image" />
+          <img
+            src="../src/public/reviewer2.png"
+            class="reviewer__image"
+            alt="reviewer_Alyssia"
+          />
           <div class="reviewer__info">
             <h3 class="reviewer__name">ALYSSIA CARA</h3>
             <p class="reviewer__text">
@@ -427,34 +453,82 @@
       <h2 class="faq__title">FAQ`S</h2>
       <div class="faq__container">
         <div class="faq__item">
-          <p class="faq__text">How does Yoga work?</p>
-          <img src="../src/public/plus.png" class="faq__image" alt="faq_more" />
+          <button class="faq__accordion">How does Yoga work?</button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
         </div>
         <div class="faq__item">
-          <p class="faq__text">What are the health benefits of workouts ?</p>
-          <img src="../src/public/plus.png" class="faq__image" alt="faq_more" />
+          <button class="faq__accordion">
+            What are the health benefits of workouts ?
+          </button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
         </div>
         <div class="faq__item">
-          <p class="faq__text">How will Ballet help me flexible my body ?</p>
-          <img src="../src/public/plus.png" class="faq__image" alt="faq_more" />
+          <button class="faq__accordion">
+            How will Ballet help me flexible my body ?
+          </button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
         </div>
         <div class="faq__item">
-          <p class="faq__text">Is Yoga suitable for beginners?</p>
-          <img src="../src/public/plus.png" class="faq__image" alt="faq_more" />
+          <button class="faq__accordion">
+            Is Yoga suitable for beginners?
+          </button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
         </div>
         <div class="faq__item">
-          <p class="faq__text">Can Meditation help me gain concentration?</p>
-          <img src="../src/public/plus.png" class="faq__image" alt="faq_more" />
+          <button class="faq__accordion">How does Yoga work?</button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
         </div>
         <div class="faq__item">
-          <p class="faq__text">
+          <button class="faq__accordion">
             Are there any exercises for post-natal mother ?
-          </p>
-          <img src="../src/public/plus.png" class="faq__image" alt="faq_more" />
+          </button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
         </div>
       </div>
     </section>
-    <section class="footer">
+    <footer class="footer">
       <div class="footer__first">
         <h2 class="footer__title"><b>t</b>he <b>b</b>ody <b>c</b>lub</h2>
         <h4 class="footer__name">Keep in Touch</h4>
@@ -462,10 +536,10 @@
           Join our newsletter to receive exclusive recipes, discounts, new
           course updates, and more.
         </p>
-        <div class="footer__input">
+        <form class="footer__input">
           <input type="email" class="footer__email" placeholder="EMAIL" />
           <button class="footer__btn">send</button>
-        </div>
+        </form>
       </div>
       <div class="footer__second">
         <div class="footer__link__first-column">
@@ -482,21 +556,34 @@
         </div>
       </div>
       <div class="footer__third">
-        <div class="footer__download">
-          <img class="footer__icon" src="../src/public/apple.png" />
-          <span class="footer__download-text">DOWNLOAD ON APPLE STORE</span>
-        </div>
-        <div class="footer__download">
-          <img class="footer__icon" src="../src/public/google.png" />
+        <a class="footer__download" href="#"
+          ><img
+            class="footer__icon"
+            src="../src/public/apple.png"
+            alt="apple"
+          />
+          <span class="footer__download-text">DOWNLOAD ON APPLE STORE</span></a
+        >
+        <a class="footer__download" href="#">
+          <img
+            class="footer__icon"
+            src="../src/public/google.png"
+            alt="google"
+          />
           <span class="footer__download-text">DOWNLOAD ON PLAY STORE</span>
-        </div>
+        </a>
         <div class="footer__sprites">
-          <img src="../src/public/twitter.png" alt="twitter" />
-          <img src="../src/public/instagram.png" alt="instagram" />
-          <img src="../src/public/facebook.png" alt="facebook" />
-          <img src="../src/public/youtube.png" alt="youtube" />
+          <a href="#"><img src="../src/public/twitter.png" alt="twitter" /></a>
+          <a href="#"
+            ><img src="../src/public/instagram.png" alt="instagram"
+          /></a>
+          <a href="#"
+            ><img src="../src/public/facebook.png" alt="facebook"
+          /></a>
+          <a href="#"><img src="../src/public/youtube.png" alt="youtube" /></a>
         </div>
       </div>
-    </section>
+    </footer>
+    <script src="javascript.js"></script>
   </body>
 </html>
