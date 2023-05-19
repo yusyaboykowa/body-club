@@ -51,7 +51,6 @@
   text-align: center;
 }
 .plans__duration {
-  margin: 25px auto;
   font-weight: 400;
   font-size: 15px;
   line-height: 20px;
@@ -72,4 +71,40 @@
   background: #000000;
   border: 1px solid #000000;
   border-radius: 10px;
+}
+@media (max-width: 1010px) {
+  .plans__text {
+    width: 100%;
+
+    padding: 20px;
+  }
+  .plans__name {
+    margin-top: 20px;
+  }
+  .plans__card {
+    width: 200px;
+    height: 100%;
+  }
+  .plans__btn {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 635px) {
+  .plans__container {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-bottom: 20px;
+  }
+  .plans__title {
+    padding-top: 10px;
+    font-size: 30px;
+  }
+  .plans__text {
+    font-size: 15px;
+    line-height: 18px;
+    padding: 10px;
+  }
+  .plans__price {
+    margin: 0 auto;
+  }
 }
