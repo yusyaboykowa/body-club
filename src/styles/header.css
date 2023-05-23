@@ -26,3 +26,12 @@
   font-size: 24px;
   line-height: 30px;
 }
+
+@media (max-width: 996px) {
+  .header__item {
+    display: none;
+  }
+  .header {
+    padding-right: 25px;
+  }
+}

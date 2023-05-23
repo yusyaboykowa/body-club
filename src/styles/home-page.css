@@ -35,3 +35,41 @@
   text-transform: uppercase;
   text-align: justify;
 }
+@media (max-width: 1064px) {
+  .home-page {
+    height: 100vh;
+  }
+  .home-page__text {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 50px;
+    height: auto;
+    width: 700px;
+    bottom: 15px;
+  }
+  .home-page__text p {
+    font-size: 35px;
+    width: 50%;
+  }
+  .book-button {
+    width: 300px;
+    font-size: 25px;
+  }
+}
+@media (max-width: 996px) {
+  .home-page__title {
+    top: 20px;
+  }
+}
+@media (max-width: 756px) {
+  .book-button {
+    display: none;
+  }
+}
+@media (max-width: 560px) {
+  .home-page__text p {
+    font-size: 25px;
+    width: 40%;
+  }
+}

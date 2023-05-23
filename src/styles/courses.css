@@ -12,21 +12,122 @@
 }
 .courses__image {
   width: 50%;
+  height: 50%;
 }
 .courses__info {
   width: 50%;
-  padding: 50px;
+  height: 50%;
+  padding: 30px;
 }
 .courses__title {
   font-size: 35px;
-  line-height: 45px;
   text-align: justify;
   text-decoration-line: underline;
   text-transform: uppercase;
 }
 .courses__text {
-  font-size: 30px;
-  line-height: 45px;
+  font-size: 28px;
+  line-height: 34px;
   text-align: justify;
-  margin-top: 60px;
+  margin-top: 20px;
+}
+@media (max-width: 1220px) {
+  .courses__title {
+    font-size: 30px;
+    padding-top: 20px;
+    padding-left: 30px;
+  }
+  .courses__text {
+    font-size: 27px;
+    line-height: 29px;
+    padding: 20px;
+    margin-top: 0px;
+  }
+}
+@media (max-width: 1150px) {
+  .courses__info {
+    padding: 10px;
+  }
+  .courses__title {
+    font-size: 30px;
+    padding-top: 20px;
+    padding-left: 30px;
+  }
+  .courses__text {
+    font-size: 24px;
+    line-height: 25px;
+    padding: 20px;
+    margin-top: 0px;
+  }
+}
+@media (max-width: 1020px) {
+  .courses__title {
+    font-size: 27px;
+  }
+  .courses__text {
+    font-size: 21px;
+    line-height: 24px;
+    padding: 20px;
+    margin-top: 0px;
+  }
+}
+@media (max-width: 926px) {
+  .courses__text {
+    font-size: 19px;
+    line-height: 20px;
+  }
+}
+@media (max-width: 855px) {
+  .courses__text {
+    font-size: 17px;
+    line-height: 17px;
+  }
+}
+@media (max-width: 750px) {
+  .courses__text {
+    font-size: 15px;
+    line-height: 15px;
+    padding: 15px;
+  }
+}
+@media (max-width: 670px) {
+  .courses__title {
+    font-size: 22px;
+    padding-top: 10px;
+  }
+  .courses__text {
+    font-size: 14px;
+    line-height: 14px;
+    padding: 10px;
+  }
+}
+@media (max-width: 591px) {
+  .courses__title {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 15px;
+  }
+  .courses__text {
+    font-size: 13px;
+    line-height: 13px;
+    padding: 5px;
+  }
+}
+@media (max-width: 520px) {
+  .courses__title {
+    font-size: 14px;
+    padding-top: 5px;
+    padding-left: 15px;
+  }
+  .courses__text {
+    font-size: 10px;
+    line-height: 10px;
+    padding: 5px;
+  }
+}
+@media (max-width: 440px) {
+  .courses__text {
+    font-size: 8px;
+    line-height: 8px;
+  }
 }

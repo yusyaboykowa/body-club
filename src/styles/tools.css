@@ -1,0 +1,178 @@
+.tools {
+  display: flex;
+  justify-content: center;
+  padding: 80px;
+}
+.tools__container {
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  padding: 30px;
+  width: 1100px;
+  justify-content: center;
+}
+.tools__title {
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 40px;
+  text-decoration-line: underline;
+  padding: 30px;
+  width: 500px;
+}
+.tools__name {
+  font-family: "Jost";
+  font-size: 18px;
+  padding: 15px;
+}
+.tools__card {
+  background-color: #f4eeee;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  padding: 15px;
+  margin: 25px;
+}
+
+.tools__item {
+  padding: 20px;
+}
+.tools__image {
+  width: 250px;
+  display: block;
+  margin: 15px auto;
+}
+.sleep-water {
+  display: flex;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+}
+.tools__tracker-second {
+  margin: 20px;
+}
+.tools__main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.workouts,
+.music {
+  width: 300px;
+  height: 400px;
+}
+.tools__image-workout {
+  display: block;
+  width: 250px;
+  height: 275px;
+  margin: 0px auto;
+}
+.tools__item-name {
+  font-family: "Jost";
+  font-size: 13px;
+  text-align: center;
+  width: 110px;
+}
+.tools__item-image {
+  width: 130px;
+  height: 90px;
+}
+.music__container {
+  background-color: white;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 15px;
+}
+.music__listen {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 15px;
+}
+.music__miley {
+  width: 235px;
+  border: 2px solid black;
+  border-radius: 50px;
+  margin: 20px 0px;
+}
+.music__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 5px;
+}
+.music__image {
+  width: 90px;
+  height: 80px;
+}
+.music__name {
+  font-weight: 600;
+  font-size: 15px;
+}
+.music__author {
+  font-size: 12px;
+}
+.line {
+  border: 1.5px solid #000000;
+  padding-right: 15px;
+}
+.music__time {
+  display: flex;
+  justify-content: space-between;
+}
+.music__control {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+@media (max-width: 1150px) {
+  .tools {
+    padding: 20px 80px;
+  }
+  .tools__title {
+    padding: 0px;
+  }
+  .tools__container {
+    padding: 5px;
+  }
+  .tools__card {
+    margin: 5px;
+  }
+}
+@media (max-width: 1015px) {
+  .tools__container {
+    flex-direction: column-reverse;
+  }
+  .tools__main {
+    display: none;
+  }
+  .tools__tracker-first {
+    margin: 0 auto;
+  }
+  .tools__title {
+    width: 100%;
+    text-align: center;
+  }
+  .tools__card {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 650px) {
+  .tools {
+    padding: 20px;
+  }
+  .tools__title {
+    padding: 0px;
+    font-size: 28px;
+    line-height: 35px;
+  }
+  .tools__tracker-second {
+    margin: 10px;
+  }
+  .tools__item {
+    padding: 5px;
+  }
+}
