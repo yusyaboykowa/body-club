@@ -1,2 +1,2 @@
-- [DEMO LINK](https://yusyaboykowa.github.io/body-club/)
+- [DEMO LINK](https://yusyaboykowa.github.io/body-club/index.html)
 - [the mockup](<https://www.figma.com/file/thbiTPQK9mvy9zwlvlj0x0/THE-BODY-CLUB-(Community)?type=design&node-id=0-1&t=Md6kzA8XPs82iwXe-0>)
