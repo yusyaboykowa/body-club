@@ -14,6 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="./src/styles/index.css" />
   </head>
   <body>
@@ -207,70 +211,31 @@
     </section>
     <section class="recipes" id="nutrition">
       <div class="recipes__container">
-        <h2 class="recipes__title">eat healthy and delicious</h2>
-        <p class="recipes__text">
-          with the perfect recipes by our health chef be it lunch, dinner,
-          breakfast or keto, vegan as well as your favorite cheat day recipes we
-          got you.
-        </p>
-        <div class="recipes__card-container">
-          <div class="recipes__card">
-            <img
-              src="./src/public/recipe1.png"
-              class="recipes__image"
-              alt="recipes_photo"
-            />
-            <h3 class="recipes__name">sheet pan salmon</h3>
-            <span class="recipe__ingredients">ingredients</span>
-            <ol class="recipe__list">
-              <li class="recipe__list-item">Skinless Salmon Fillets</li>
-              <li class="recipe__list-item">Green Beans</li>
-              <li class="recipe__list-item">Yellow Squash</li>
-              <li class="recipe__list-item">Onion</li>
-              <li class="recipe__list-item">Garlic</li>
-              <li class="recipe__list-item">Chopped Dil</li>
-              <li class="recipe__list-item">Butter</li>
-              <li class="recipe__list-item">Honey</li>
-              <li class="recipe__list-item">Salt</li>
-            </ol>
+        <div class="meal-wrapper">
+          <div class="meal-search">
+            <h2 class="recipes__title">eat healthy and delicious</h2>
+            <p class="recipes__text">
+              with the perfect recipes by our health chef be it lunch, dinner,
+              breakfast or keto, vegan as well as your favorite cheat day
+              recipes we got you.
+            </p>
+
+            <div class="recipes__search-box">
+              <input
+                type="text"
+                class="search-control"
+                placeholder="Enter an ingredient"
+                id="search_input"
+              />
+              <button type="submit" class="search_btn" id="search_btn">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
           </div>
-          <div class="recipes__card">
-            <img
-              src="./src/public/recipe2.png"
-              class="recipes__image"
-              alt="recipes_photo"
-            />
-            <p class="recipes__name">gigi hadid pasta</p>
-            <span class="recipe__ingredients">ingredients</span>
-            <ol class="recipe__list">
-              <li class="recipe__list-item">Penne Pasta</li>
-              <li class="recipe__list-item">Olive Oil</li>
-              <li class="recipe__list-item">Vodka</li>
-              <li class="recipe__list-item">Onion</li>
-              <li class="recipe__list-item">Crushed Chilly Flakes</li>
-              <li class="recipe__list-item">Cream</li>
-              <li class="recipe__list-item">Parmesan Cheese</li>
-            </ol>
-          </div>
-          <div class="recipes__card">
-            <img
-              src="./src/public/recipe3.png"
-              class="recipes__image"
-              alt="recipes_photo"
-            />
-            <p class="recipes__name">potato leek soup</p>
-            <span class="recipe__ingredients">ingredients</span>
-            <ol class="recipe__list">
-              <li class="recipe__list-item">Leeks</li>
-              <li class="recipe__list-item">Potatoes</li>
-              <li class="recipe__list-item">Chickpeas</li>
-              <li class="recipe__list-item">Vegetable Broth</li>
-              <li class="recipe__list-item">Minced Garlic</li>
-              <li class="recipe__list-item">Chopped Parsley</li>
-              <li class="recipe__list-item">Olive Oil</li>
-              <li class="recipe__list-item">Salt</li>
-              <li class="recipe__list-item">Black Pepper</li>
-            </ol>
+
+          <div class="recipes__meal-result">
+            <h2 id="recipes__meal-title"></h2>
+            <div id="recipes__card"></div>
           </div>
         </div>
       </div>
@@ -604,6 +569,6 @@
         </div>
       </div>
     </footer>
-    <script src="./src/javascript.js"></script>
+    <script src="javascript.js"></script>
   </body>
 </html>

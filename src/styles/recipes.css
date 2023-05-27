@@ -1,18 +1,17 @@
 .recipes {
   background: #f4eeee;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   border-bottom: 1px solid black;
 }
 .recipes__container {
   background-color: white;
   border: 1px solid black;
   margin: 30px 70px;
+  padding: 30px;
 }
 .recipes__title {
-  padding-top: 40px;
   margin: 0 auto;
-  font-style: normal;
   font-weight: 600;
   font-size: 34px;
   text-align: center;
@@ -22,141 +21,110 @@
 .recipes__text {
   padding: 15px 0;
   margin: 10px auto;
-  width: 850px;
-
-  font-style: normal;
   font-weight: 400;
   font-size: 25px;
   line-height: 30px;
   text-align: center;
 }
-.recipes__card-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-  padding-bottom: 50px;
+
+#recipes__meal-title {
+  font-size: 30px;
+  text-decoration: underline;
+  text-align: center;
 }
-.recipes__card {
-  width: 300px;
-  height: 500px;
+
+#recipes__card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.recipes__search-box {
+  margin: 1.2rem 0;
+  display: flex;
+  align-items: stretch;
+}
+.search-control,
+.search_btn {
+  width: 100%;
+}
+.search-control {
+  padding: 0 1rem;
+  font-size: 1.1rem;
+  font-size: 20px;
+  outline: 0;
+  border: 1px solid black;
+  background-color: #f4eeee;
+  color: black;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+.search-control::placeholder {
+  color: black;
+}
+.search_btn {
+  width: 65px;
+  height: 55px;
+  text-align: center;
+  font-size: 1.8rem;
+  background: #f4eeee;
+  color: black;
+  border: 1px solid black;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  transition: all 0.4s linear;
+}
+.search_btn:hover {
+  background: var(--tenne-tawny-dark);
+}
+
+.recipes__meal-item {
   background: #f4eeee;
   border: 1px solid #000000;
   box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.25);
+  padding: 15px;
 }
-.recipes__image {
-  width: 230px;
+.recipes__meal-img {
   display: block;
-  margin: 20px auto;
 }
-.recipes__name {
+.recipes__meal-naming {
   padding-left: 20px;
   font-size: 20px;
-  line-height: 33px;
-  text-align: left;
+  text-align: center;
   text-decoration-line: underline;
   text-transform: uppercase;
 }
-.recipe__ingredients {
-  margin: 15px;
-  padding-left: 5px;
-  font-size: 15px;
-  display: block;
-  text-align: left;
-  text-transform: uppercase;
-}
-.recipe__list {
-  list-style: decimal;
-  margin-left: 50px;
-}
-.recipe__list-item {
-  font-size: 15px;
-  line-height: 20px;
+.recipes__ingredient-list {
+  list-style: circle;
+  margin-left: 30px;
   text-align: left;
 }
 
 @media (max-width: 1170px) {
-  .recipes {
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-  .recipes__container {
-    margin: 10px 70px;
-  }
-  .recipes__title {
-    padding-top: 20px;
-  }
-  .recipes__card:nth-child(2) {
-    display: none;
-  }
-  .recipes__card-container {
+  #recipes__card {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    padding-bottom: 15px;
-  }
-  .recipes__text {
-    width: 100%;
-    padding: 0px 20px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
   }
 }
-@media (max-width: 760px) {
-  .recipes {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
+@media (max-width: 768px) {
   .recipes__container {
-    margin: 30px 20px;
+    margin: 15px 30px;
+    overflow: hidden;
+    width: auto;
   }
-  .recipes__title {
-    padding-top: 10px;
-    font-size: 25px;
+  #recipes__card {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
   }
-  .recipes__text {
-    font-size: 15px;
-    line-height: 18px;
-    padding: 10px;
+  .recipes__meal-item {
+    margin: 0;
   }
-  .recipes__card {
-    width: 220px;
-    height: auto;
-    padding-bottom: 10px;
+  .recipes__meal-img {
+    width: 50%;
+    margin: 0 auto;
   }
-  .recipes__image {
-    width: 180px;
-    margin: 10px auto;
-  }
-}
-@media (max-width: 500px) {
-  .recipes__card-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
-  .recipes__card {
-    width: 150px;
-    height: auto;
-    padding-bottom: 10px;
-  }
-  .recipes__image {
-    width: 140px;
-    margin: 10px auto;
-  }
-  .recipes__name {
-    padding-left: 5px;
-    font-size: 15px;
-    line-height: 18px;
-  }
-  .recipe__ingredients {
-    margin: 5px;
-    font-size: 13px;
-  }
-  .recipe__list {
-    margin-left: 20px;
-  }
-  .recipe__list-item {
-    font-size: 12px;
-    line-height: 15px;
-  }
-  .recipes__card-container {
-    padding-bottom: 20px;
+  .recipes__meal-name {
+    text-align: center;
   }
 }
