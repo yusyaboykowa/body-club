@@ -1,19 +1,19 @@
 const searchBtn = document.getElementById('search_btn');
 const mealList = document.getElementById('recipes__card');
-
+let resultTxt = document.getElementById('recipes__meal-title').innerText;
+const mealLists = document.getElementById('mealLists');
 
 searchBtn.addEventListener('click', getMealList);
 
 function getMealList() {
     let searchInputTxt = document.getElementById('search_input').value.trim();
-    document.getElementById('recipes__meal-title').innerText = "Your Searched Results:";
-
+    resultTxt = "Your Searched Results:";
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`)
         .then(response => response.json())
         .then(data => {
             let html = "";
             if (data.meals) {
-                for (let i = 0; i < Math.min(data.meals.length, 3); i++) {
+                for (let i = 0; i < 3; i++) {
                     const meal = data.meals[i];
                     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`)
                         .then(response => response.json())
@@ -35,16 +35,13 @@ function getMealList() {
                             mealList.innerHTML = html;
                         });
                 };
-                mealList.classList.remove('notFound');
-            } else {
-                html = "Sorry, we didn't find any meal!";
-                mealList.classList.add('notFound');
-                mealList.innerHTML = html;
-            }
-        });
+                mealLists.classList.add('hidden');
+                } else {
+                    mealLists.classList.remove('hidden');
+                }
+            });
 }
 
-// Get HTML for the meal ingredients
 function getMealIngredientsHTML(meal) {
     let ingredientsHTML = "";
     for (let i = 1; i <= 20; i++) {
@@ -58,3 +55,7 @@ function getMealIngredientsHTML(meal) {
     }
     return ingredientsHTML;
 }
+
+function restrictToLetters(input) {
+    input.value = input.value.replace(/[^a-zA-Z]/g, '');
+  }

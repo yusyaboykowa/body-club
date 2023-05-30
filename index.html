@@ -220,20 +220,24 @@
               recipes we got you.
             </p>
 
-            <div class="recipes__search-box">
+            <form class="recipes__search-box">
               <input
                 type="text"
                 class="search-control"
                 placeholder="Enter an ingredient"
                 id="search_input"
+                oninput="restrictToLetters(this)"
               />
               <button type="submit" class="search_btn" id="search_btn">
                 <i class="fas fa-search"></i>
               </button>
-            </div>
+            </form>
           </div>
 
           <div class="recipes__meal-result">
+            <div id="mealLists" class="recipes__meal-item hidden">
+              <p>Sorry, we didn't find any meal!</p>
+            </div>
             <h2 id="recipes__meal-title"></h2>
             <div id="recipes__card"></div>
           </div>
