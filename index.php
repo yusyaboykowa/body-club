@@ -1,3 +1,126 @@
+<?php
+include 'connect.php';
+
+if(isset($_POST['submit'])){
+   $id = create_unique_id();
+   $name = $_POST['name'];
+   $name = filter_var($name, FILTER_SANITIZE_STRING);
+   $number = $_POST['number'];
+   $number = filter_var($number, FILTER_SANITIZE_STRING);
+   $email = $_POST['email'];
+   $email = filter_var($email, FILTER_SANITIZE_STRING);
+   $password = sha1($_POST['password']);
+   $password = filter_var($password, FILTER_SANITIZE_STRING);
+   $confirm_password = sha1($_POST['confirm_password']);
+   $confirm_password = filter_var($confirm_password, FILTER_SANITIZE_STRING);
+   $select_users = $conn->prepare("SELECT * FROM `sign_up` WHERE email = ?");
+   $select_users->execute([$email]);
+
+   if($select_users->rowCount() > 0){
+      $warning_msg[] = 'email already taken!';
+   }else{
+      if($password != $confirm_password){
+         $warning_msg[] = 'Password not matched!';
+      }else{
+         $insert_user = $conn->prepare("INSERT INTO `sign_up`(id, name, number, email, password) VALUES(?,?,?,?,?)");
+         $insert_user->execute([$id, $name, $number, $email, $confirm_password]);
+         if($insert_user){
+            $verify_users = $conn->prepare("SELECT * FROM `sign_up` WHERE email = ? AND password = ? LIMIT 1");
+            $verify_users->execute([$email, $password]);
+            $row = $verify_users->fetch(PDO::FETCH_ASSOC);
+
+         }
+      }
+   }
+}
+if(isset($_POST['send'])){
+  $message_id=create_unique_id();
+  $receiver="Josh Randor";
+  $name=$_POST['name'];
+  $name=filter_var($name, FILTER_SANITIZE_STRING);
+  $email=$_POST['email'];
+  $email=filter_var($email, FILTER_SANITIZE_STRING);
+  $text=$_POST['text'];
+  $text=filter_var($text, FILTER_SANITIZE_STRING);
+  $verify_message=$conn->prepare("SELECT * FROM `messages` WHERE receiver=? AND name=? AND email=? AND text=?");
+  $verify_message->execute([$name, $receiver, $email, $text]);
+
+  if($verify_message->rowCount()>0){
+      $warning_msg[]="message already sent!";
+  }else{
+      $insert_message=$conn->prepare("INSERT INTO `messages`(id,receiver,name,email,text) VALUES (?,?,?,?,?)");
+      $insert_message->execute([$message_id, $receiver, $name, $email, $text]);
+      $success_msg[]='message sent successfully!';
+  }
+
+}
+if(isset($_POST['send2'])){
+  $message_id=create_unique_id();
+  $receiver="Christina Pery";
+  $name=$_POST['name'];
+  $name=filter_var($name, FILTER_SANITIZE_STRING);
+  $email=$_POST['email'];
+  $email=filter_var($email, FILTER_SANITIZE_STRING);
+  $text=$_POST['text'];
+  $text=filter_var($text, FILTER_SANITIZE_STRING);
+  $verify_message=$conn->prepare("SELECT * FROM `messages` WHERE receiver=? AND name=? AND email=? AND text=?");
+  $verify_message->execute([$name, $receiver, $email, $text]);
+
+  if($verify_message->rowCount()>0){
+      $warning_msg[]="message already sent!";
+  }else{
+      $insert_message=$conn->prepare("INSERT INTO `messages`(id,receiver,name,email,text) VALUES (?,?,?,?,?)");
+      $insert_message->execute([$message_id, $receiver, $name, $email, $text]);
+      $success_msg[]='message sent successfully!';
+  }
+
+}
+if(isset($_POST['send3'])){
+  $message_id=create_unique_id();
+  $receiver="Adam Smith";
+  $name=$_POST['name'];
+  $name=filter_var($name, FILTER_SANITIZE_STRING);
+  $email=$_POST['email'];
+  $email=filter_var($email, FILTER_SANITIZE_STRING);
+  $text=$_POST['text'];
+  $text=filter_var($text, FILTER_SANITIZE_STRING);
+  $verify_message=$conn->prepare("SELECT * FROM `messages` WHERE receiver=? AND name=? AND email=? AND text=?");
+  $verify_message->execute([$name, $receiver, $email, $text]);
+
+  if($verify_message->rowCount()>0){
+      $warning_msg[]="message already sent!";
+  }else{
+      $insert_message=$conn->prepare("INSERT INTO `messages`(id,receiver,name,email,text) VALUES (?,?,?,?,?)");
+      $insert_message->execute([$message_id, $receiver, $name, $email, $text]);
+      $success_msg[]='message sent successfully!';
+  }
+
+}
+if(isset($_POST['send4'])){
+  $message_id=create_unique_id();
+  $receiver="Blessy Mathew";
+  $name=$_POST['name'];
+  $name=filter_var($name, FILTER_SANITIZE_STRING);
+  $email=$_POST['email'];
+  $email=filter_var($email, FILTER_SANITIZE_STRING);
+  $text=$_POST['text'];
+  $text=filter_var($text, FILTER_SANITIZE_STRING);
+  $verify_message=$conn->prepare("SELECT * FROM `messages` WHERE receiver=? AND name=? AND email=? AND text=?");
+  $verify_message->execute([$name, $receiver, $email, $text]);
+
+  if($verify_message->rowCount()>0){
+      $warning_msg[]="message already sent!";
+  }else{
+      $insert_message=$conn->prepare("INSERT INTO `messages`(id,receiver,name,email,text) VALUES (?,?,?,?,?)");
+      $insert_message->execute([$message_id, $receiver, $name, $email, $text]);
+      $success_msg[]='message sent successfully!';
+  }
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,26 +144,100 @@
     <link rel="stylesheet" href="./src/styles/index.css" />
   </head>
   <body>
+  <div id="menu-btn" class="fas fa-bars" onclick="openmenu()"></div>
     <header class="header">
       <nav class="header__nav">
         <a href="#nutrition" class="header__item">nutrition</a>
         <a href="#workouts" class="header__item">workouts</a>
         <a href="#offers" class="header__item">offers</a>
-        <a href="#" class="button-primary nav-button">sign in</a>
+        <a href="#" class="button-primary nav-button" onclick="openForm()"
+          >sign in</a
+        >
       </nav>
     </header>
-    <section class="home-page">
+
+    <section class="menu" id=menu>
+      <div id="close-btn"><i class="fas fa-times" onclick="closemenu()"></i></div>
+      <a href="dashboard.php" class="logo">The Body Club</a>
+      <nav class="navbar">
+          <a class="menu__link" href="#home-page"><i class="fas fa-home"></i><span>home page</span></a>
+          <a class="menu__link" href="#description"><i class="fa-solid fa-paperclip"></i><span>description</span></a>
+          <a class="menu__link" href="#workouts"><i class="fa-solid fa-dumbbell"></i><span>workouts</span></a>
+          <a class="menu__link" href="#offers"><i class="fa-solid fa-money-bill"></i><span>offers</span></a>
+          <a class="menu__link" href="#nutrition"><i class="fa-solid fa-bowl-food"></i><span>recipes</span></a>
+          <a class="menu__link" href="#experts"><i class="fa-solid fa-users"></i><span>experts</span></a>
+          <a class="menu__link" href="#tools"><i class="fa-solid fa-gear"></i><span>tools</span></a>
+          <a class="menu__link" href="#reviews"><i class="fa-solid fa-square-poll-vertical"></i><span>reviews</span></a>
+          <a class="menu__link" href="#faq"><i class="fa-solid fa-question"></i><span>home</span></a>
+          <a class="menu__link" href="#info"><i class="fa-sharp fa-solid fa-circle-info"></i><span>info</span></a>
+      </nav>
+    </section>
+
+    <section class="home-page" id="home-page">
       <div class="home-page__title title">
         <p class="title__item">the</p>
         <p class="title__item">body</p>
         <p class="title__item">club</p>
+      </div>
+      <div class="form-popup" id="myForm">
+        <form action="" class="form-container" method="post">
+          <h1 class="form_title">Register</h1>
+          <input
+            type="tel"
+            name="name"
+            required
+            maxlength="50"
+            placeholder="enter your name"
+            class="form_input"
+          />
+          <input
+            type="email"
+            name="email"
+            required
+            maxlength="50"
+            placeholder="enter your email"
+            class="form_input"
+          />
+          <input
+            type="number"
+            name="number"
+            required
+            minlength="10"
+            maxlength="10"
+            placeholder="enter your number"
+            class="form_input"
+          />
+          <input
+            type="password"
+            name="password"
+            required
+            maxlength="20"
+            placeholder="enter your password"
+            class="form_input"
+          />
+          <input
+            type="password"
+            name="confirm_password"
+            required
+            maxlength="20"
+            placeholder="enter your password"
+            class="form_input"
+          />
+
+          <button type="submit" name="submit" class="button-primary home-page_btn">
+            Register
+          </button>
+          <button type="button" class="button-primary home-page_btn cancel" onclick="closeForm()">
+            Close
+          </button>
+        </form>
       </div>
       <div class="home-page__text">
         <p>give your body the love it deserves.</p>
         <a class="button-primary book-button" href="#">book appointment</a>
       </div>
     </section>
-    <section class="description">
+    <section class="description" id="description">
       <div class="description__title title">
         <h2><b>t</b>he <b>b</b>ody <b>c</b>lub</h2>
       </div>
@@ -235,6 +432,7 @@
           </div>
 
           <div class="recipes__meal-result">
+            <div id="error_message" class="recipes__meal-item hidden"></div>
             <div id="mealLists" class="recipes__meal-item hidden">
               <p>Sorry, we didn't find any meal!</p>
             </div>
@@ -244,9 +442,9 @@
         </div>
       </div>
     </section>
-    <section class="experts">
+    <section class="experts" id="experts">
       <h1 class="experts__title">meet the experts</h1>
-      <div class="experts__container">
+      <div class="experts__container" id="container">
         <div class="experts__card">
           <img
             src="./src/public/expert1.png"
@@ -254,11 +452,29 @@
             alt="expert Josh"
           />
           <div class="experts__card-container">
-            <h3 class="experts__name">Josh Radnor</h3>
-            <p class="experts__info">
-              Hi. I am your fitness expert I have trained thousands of fitness
-              freaks over the years.
-            </p>
+            <div id="experts__containing">
+              <h3 class="experts__name">Josh Radnor</h3>
+              <p class="experts__info">
+                Hi. I am your fitness expert I have trained thousands of fitness
+                freaks over the years.
+              </p>
+              <button type="button" class="button-primary btn-info"  id="btn_info" onclick="opensForm()">Send message</button>
+            </div>
+              <div class="form-popup" id="Form">
+              <form action="" method="post" class="form-container form_odd">
+                <h3>YOU WRITE MESSAGE TO:</h3>
+                <input type="text" name="receiver" required maxlength="50" id="form_receiver"  value="Josh Randor" readonly required class="form_input form_receiver">
+                <input type="text" name="name" required maxlength="50" placeholder="enter your name" class="form_input">
+                <input type="email" name="email" required maxlength="50" placeholder="enter your email" class="form_input">
+                <textarea name="text" placeholder="enter your message" required maxlength="1000" cols="30" rows="5" class="form_input"></textarea>
+                <button type="submit" name="send" class="button-primary ">
+                  Send
+                </button>
+                <button type="button" class="button-primary cancel" onclick="closesForm()">
+                  Close
+                </button>
+              </form>
+            </div>
           </div>
         </div>
         <div class="experts__card">
@@ -268,11 +484,29 @@
             alt="expert Christina"
           />
           <div class="experts__card-container">
-            <h3 class="experts__name">CHRISTINA PERY</h3>
-            <p class="experts__info">
-              Hello. I have my expertise in teaching advanced yoga and splits
-              with 4 years of experience.
-            </p>
+            <div id="experts__containing2">
+              <h3 class="experts__name">CHRISTINA PERY</h3>
+              <p class="experts__info">
+                Hello. I have my expertise in teaching advanced yoga and splits
+                with 4 years of experience.
+              </p>
+              <button type="button" class="button-primary btn-info"  id="btn_info"onclick="opensForm2()">Send message</button>
+          </div>
+            <div class="form-popup" id="Form2">
+              <form action="" method="post" class="form-container form_even">
+                <h3>YOU WRITE MESSAGE TO:</h3>
+                <input type="text" name="receiver" required maxlength="50" id="form_receiver"  value="Christina Pery" readonly required class="form_input form_receiver">
+                <input type="text" name="name" required maxlength="50" placeholder="enter your name" class="form_input">
+                <input type="email" name="email" required maxlength="50" placeholder="enter your email" class="form_input">
+                <textarea name="text" placeholder="enter your message" required maxlength="1000" cols="30" rows="5" class="form_input"></textarea>
+                <button type="submit" name="send2" class="button-primary ">
+                  Send
+                </button>
+                <button type="button" class="button-primary  cancel" onclick="closesForm2()">
+                  Close
+                </button>
+              </form>
+            </div>
           </div>
         </div>
         <div class="experts__card">
@@ -282,11 +516,29 @@
             alt="expert Adam"
           />
           <div class="experts__card-container">
-            <h3 class="experts__name">ADAM SMITH</h3>
-            <p class="experts__info">
-              Bonjour. I have been training people for building muscle strength
-              and fitness for around 8 years.
-            </p>
+            <div id="experts__containing3">
+              <h3 class="experts__name">ADAM SMITH</h3>
+              <p class="experts__info">
+                Bonjour. I have been training people for building muscle strength
+                and fitness for around 8 years.
+              </p>
+              <button type="button" class="button-primary btn-info"  id="btn_info"onclick="opensForm3()">Send message</button>
+            </div>
+            <div class="form-popup" id="Form3">
+              <form action="" method="post" class="form-container form_odd">
+                <h3>YOU WRITE MESSAGE TO:</h3>
+                <input type="text" name="receiver" required maxlength="50" id="form_receiver"  value="Adam Smith" readonly required class="form_input form_receiver">
+                <input type="text" name="name" required maxlength="50" placeholder="enter your name" class="form_input">
+                <input type="email" name="email" required maxlength="50" placeholder="enter your email" class="form_input">
+                <textarea name="text" placeholder="enter your message" required maxlength="1000" cols="30" rows="5" class="form_input"></textarea>
+                <button type="submit" name="send3" class="button-primary ">
+                  Send
+                </button>
+                <button type="button" class="button-primary  cancel" onclick="closesForm3()">
+                  Close
+                </button>
+              </form>
+            </div>
           </div>
         </div>
         <div class="experts__card">
@@ -296,16 +548,34 @@
             alt="expert Blessy"
           />
           <div class="experts__card-container">
-            <h3 class="experts__name">BLESSY MATHEW</h3>
-            <p class="experts__info">
-              ALOS. This your favorite ballet teacher . I teach ballet from
-              beginner to advanced level.
-            </p>
+            <div id="experts__containing4">
+              <h3 class="experts__name">BLESSY MATHEW</h3>
+              <p class="experts__info">
+                ALOS. This your favorite ballet teacher . I teach ballet from
+                beginner to advanced level.
+              </p>
+              <button type="button" class="button-primary btn-info"  id="btn_info"onclick="opensForm4()">Send message</button>
+            </div>
+              <div class="form-popup" id="Form4">
+              <form action="" method="post" class="form-container form_even">
+                <h3>YOU WRITE MESSAGE TO:</h3>
+                <input type="text" name="receiver" required maxlength="50" id="form_receiver"  value="Blessy Mathew" readonly required class="form_input form_receiver">
+                <input type="text" name="name" required maxlength="50" placeholder="enter your name" class="form_input">
+                <input type="email" name="email" required maxlength="50" placeholder="enter your email" class="form_input">
+                <textarea name="text" placeholder="enter your message" required maxlength="1000" cols="30" rows="5" class="form_input"></textarea>
+                <button type="submit" name="send4" class="button-primary ">
+                  Send
+                </button>
+                <button type="button" class="button-primary  cancel" onclick="closesForm4()">
+                  Close
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="tools">
+    <section class="tools" id="tools">
       <div class="tools__container">
         <div class="tools__tracker-first">
           <div class="tools__card calories">
@@ -327,7 +597,7 @@
               <h3 class="tools__item-name">SLEEP TRACKER</h3>
               <img
                 class="tools__item-image"
-                src="../src/public/tool_3.png"
+                src="./src/public/tool_3.png"
                 alt="sleep"
               />
             </div>
@@ -382,7 +652,7 @@
         </div>
       </div>
     </section>
-    <section class="reviews">
+    <section class="reviews" id="reviews">
       <h2 class="reviews__title">reviews</h2>
       <p class="reviews__text">
         THE VALUEABLE SECTION WHICH MAKES US BETTER EVERYDAY
@@ -418,7 +688,7 @@
         </div>
       </div>
     </section>
-    <section class="faq">
+    <section class="faq" id="faq">
       <h2 class="faq__title">FAQ`S</h2>
       <div class="faq__container">
         <div class="faq__item">
@@ -497,7 +767,7 @@
         </div>
       </div>
     </section>
-    <footer class="footer">
+    <footer class="footer" id="info">
       <div class="footer__first">
         <h2 class="footer__title"><b>t</b>he <b>b</b>ody <b>c</b>lub</h2>
         <h4 class="footer__name">Keep in Touch</h4>
@@ -505,9 +775,11 @@
           Join our newsletter to receive exclusive recipes, discounts, new
           course updates, and more.
         </p>
-        <form class="footer__input">
-          <input type="email" class="footer__email" placeholder="EMAIL" />
-          <button class="footer__btn">send</button>
+        <form class="footer__input" action="send_mail.php" method="POST">
+          <input type="email"  name="email" class="footer__email" placeholder="EMAIL" />
+          <input type="text"  name="subject" class="footer__subject" placeholder="EMAIL" />
+          <input type="text"  name="message" class="footer__message" placeholder="EMAIL" />
+          <button type="submit" name="send" class="footer__btn" >send</button>
         </form>
       </div>
       <div class="footer__second">
@@ -573,6 +845,18 @@
         </div>
       </div>
     </footer>
+
+<script>
+  function openmenu() {
+    document.getElementById("menu").style.display = "block";
+  }
+
+  function closemenu() {
+    document.getElementById("menu").style.display = "none";
+  }
+</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="javascript.js"></script>
-  </body>
+    <?php include 'message.php';?>
+    </body>
 </html>

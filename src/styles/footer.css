@@ -72,6 +72,10 @@
 .footer__third {
   padding-top: 150px;
 }
+.footer__subject,
+.footer__message {
+  display: none;
+}
 .footer__download {
   display: flex;
   border: 6px solid #000000;
