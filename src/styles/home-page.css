@@ -35,6 +35,59 @@
   text-transform: uppercase;
   text-align: justify;
 }
+
+.form-popup {
+  display: none;
+  text-align: center;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  left: calc(50% - (300px / 2));
+  top: 25%;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+.form_title {
+  text-transform: uppercase;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.form_input {
+  width: 250px;
+  padding: 10px;
+  margin: 5px auto;
+  border-radius: 50px;
+  background: #f4eeee;
+  border: 1px solid black;
+}
+.form_input:hover {
+  box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.25);
+}
+.form_input:focus {
+  background-color: white;
+  outline: none;
+}
+.home-page_btn {
+  margin-top: 10px;
+}
+.cancel {
+  background-color: black;
+  color: white;
+}
+
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
 @media (max-width: 1064px) {
   .home-page {
     height: 100vh;
@@ -59,7 +112,7 @@
 }
 @media (max-width: 996px) {
   .home-page__title {
-    top: 20px;
+    top: 60px;
   }
 }
 @media (max-width: 756px) {

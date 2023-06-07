@@ -72,6 +72,10 @@
 .footer__third {
   padding-top: 150px;
 }
+.footer__subject,
+.footer__message {
+  display: none;
+}
 .footer__download {
   display: flex;
   border: 6px solid #000000;
@@ -92,7 +96,10 @@
   justify-content: center;
   margin-top: 120px;
 }
-
+.footer__sprites-image {
+  width: 45px;
+  height: 45px;
+}
 @media (max-width: 996px) {
   .footer {
     grid-template-columns: 1fr;
