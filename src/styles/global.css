@@ -3,6 +3,18 @@
   font-style: normal;
   font-weight: 500;
 }
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 15px;
+}
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #f4eeee;
+  border-radius: 20px;
+  border: 1px solid black;
+}
 body {
   background-color: #f4eeee;
 }
@@ -24,10 +36,16 @@ b {
   font-size: 30px;
 }
 #menu-btn {
+  display: none;
   position: fixed;
-  top: 10px;
-  left: 10px;
+  top: 30px;
+  left: 30px;
   z-index: 99999;
   cursor: pointer;
-  width: 30px;
+}
+
+@media (max-width: 996px) {
+  #menu-btn {
+    display: block;
+  }
 }

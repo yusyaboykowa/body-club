@@ -144,7 +144,7 @@ if(isset($_POST['send4'])){
     <link rel="stylesheet" href="./src/styles/index.css" />
   </head>
   <body>
-  <div id="menu-btn" class="fas fa-bars" onclick="openmenu()"></div>
+  <div id="menu-btn"  onclick="openmenu()"><i class="fas fa-bars fa-lg"></i></div>
     <header class="header">
       <nav class="header__nav">
         <a href="#nutrition" class="header__item">nutrition</a>
@@ -157,7 +157,7 @@ if(isset($_POST['send4'])){
     </header>
 
     <section class="menu" id=menu>
-      <div id="close-btn"><i class="fas fa-times" onclick="closemenu()"></i></div>
+      <div id="close-btn"><i class="fas fa-times " onclick="closemenu()"></i></div>
       <a href="dashboard.php" class="logo">The Body Club</a>
       <nav class="navbar">
           <a class="menu__link" href="#home-page"><i class="fas fa-home"></i><span>home page</span></a>

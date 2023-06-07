@@ -96,7 +96,10 @@
   justify-content: center;
   margin-top: 120px;
 }
-
+.footer__sprites-image {
+  width: 45px;
+  height: 45px;
+}
 @media (max-width: 996px) {
   .footer {
     grid-template-columns: 1fr;
